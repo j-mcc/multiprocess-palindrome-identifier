@@ -1,0 +1,15 @@
+These programs demonstrate the use of IPC shared memory and implement Peterson's algorithm for multi-process synchronization for N process.
+
+Master reads a file of strings and places them into shared memory, then forks off N simulteaneous processes. Each child process exec's the Palin program.
+Palin checks whether its string is a palindrome or not and places the string in the corresponding file.
+When Palin terminates, Master replaces the process with a new child until all the strings have been checked.
+
+This program also implements SIGINT and SIGALRM signal handling.
+
+To make this program, issue: make master palin
+To run this program, issue: ./master -f filename
+
+To change the number of simulteaneous processes, change the SIMULTEANEOUS_PROCESSES definition in master.h
+To change the number of total strings, change the LIST_SIZE definition in master.h
+
+
